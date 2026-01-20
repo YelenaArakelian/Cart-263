@@ -4,44 +4,104 @@
 
 "use strict";
 
-/**Rectangles set up */
+let rectWidth;
+let rectHeight;
 
-//rectangle 1
-const r1Width = 200;
-const r1Height = 600;
-let r1X = 0;
-let r1Y = 0;
+let r1X, r2X, r3X;
+let rY = 0;
 
-//rectangle 2
-const r2Width = 200;
-const r2Height = 600;
-let r2X = 200;
-let r2Y = 0;
+// rectangle 1 color (dark blue)
+let r1R = 0;
+let r1G = 0;
+let r1B = 128;
 
-//rectangle 3
-const r3Width = 200;
-const r3Height = 600;
-let r3X = 400;
-let r3Y = 0;
+// rectangle 2 color (bright blue)
+let r2R = 0;
+let r2G = 255;
+let r2B = 255;
+
+// rectangle 3 color (sky blue)
+let r3R = 137;
+let r3G = 207;
+let r3B = 240;
 
 function setup() {
-  console.log("go");
   createCanvas(600, 600);
-  drawRectangle();
+
+  // size of rectangles
+  rectWidth = width / 3;
+  rectHeight = height;
+
+  // x positions
+  r1X = 0;
+  r2X = rectWidth;
+  r3X = rectWidth * 2;
 }
 
 function draw() {
-  //rectangles
-  drawRectangle(r1X, r1Y, r1Width, r1Height, 0, 0, 128);
-  drawRectangle(r2X, r2Y, r2Width, r2Height, 0, 255, 255);
-  drawRectangle(r3X, r3Y, r3Width, r3Height, 137, 207, 240);
-}
+  background(220);
 
-function drawRectangle(x, y, w, h, r, g, b) {
-  //body
-  push();
+  // Rectangle 1
+  let mouseOnR1 = false;
+
+  if (mouseX > r1X) {
+    if (mouseX < r1X + rectWidth) {
+      if (mouseY > rY) {
+        if (mouseY < rY + rectHeight) {
+          mouseOnR1 = true;
+        }
+      }
+    }
+  }
+
+  if (mouseOnR1) {
+    fill(255);
+  } else {
+    fill(r1R, r1G, r1B);
+  }
+
   noStroke();
-  fill(r, g, b);
-  rect(x, y, w, h);
-  pop();
+  rect(r1X, rY, rectWidth, rectHeight);
+
+  // Rectangle 2
+  let mouseOnR2 = false;
+
+  if (mouseX > r2X) {
+    if (mouseX < r2X + rectWidth) {
+      if (mouseY > rY) {
+        if (mouseY < rY + rectHeight) {
+          mouseOnR2 = true;
+        }
+      }
+    }
+  }
+
+  if (mouseOnR2) {
+    fill(255);
+  } else {
+    fill(r2R, r2G, r2B);
+  }
+
+  rect(r2X, rY, rectWidth, rectHeight);
+
+  // Rectangle 3
+  let mouseOnR3 = false;
+
+  if (mouseX > r3X) {
+    if (mouseX < r3X + rectWidth) {
+      if (mouseY > rY) {
+        if (mouseY < rY + rectHeight) {
+          mouseOnR3 = true;
+        }
+      }
+    }
+  }
+
+  if (mouseOnR3) {
+    fill(255);
+  } else {
+    fill(r3R, r3G, r3B);
+  }
+
+  rect(r3X, rY, rectWidth, rectHeight);
 }
