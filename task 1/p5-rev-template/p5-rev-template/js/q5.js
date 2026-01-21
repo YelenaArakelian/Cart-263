@@ -4,8 +4,6 @@
 
 "use strict";
 
-// GLOBAL VARIABLES
-
 let counter = 0;
 // number of ellipses to draw
 let radius = 20;
