@@ -1,39 +1,68 @@
+/**
+ * TASK 1: Yéléna and Scarlett
+ */
+
 "use strict";
-const rect = {
-    x: random(0, 500),
-    y: random(0, 500)
-} 
+
+/**squares set up */
+
+//square 1
+const s1Size = 50;
+let s1X = 100;
+let s1Y = 100;
+
+//square 2
+const s2Size = 70;
+let s2X = 150;
+let s2Y = 150;
+
+//square 3
+const s3Size = 80;
+const s3Speed = 2;
+let s3X = 100;
+let s3Y = 220;
 
 function setup() {
-    createCanvas(500,500);
-    fill(150, 0, 255);  
-    drawRect();
+  console.log("go");
+  createCanvas(500, 500);
+  drawSquare();
 }
 
 function draw() {
-       background(200); 
+  background("#ac55e6");
 
-       drawRect(50, 50, 80, 80, 100, 255, 255);
-       drawRect(150, 150, 100, 100, 255, 100, 255);
-       drawRect(250, 250, 40, 40, 255, 255, 100);
-      
+  //squares
+  drawSquare(s1X, s1Y, s1Size, s1Size, 206, 56, 156);
+  drawSquare(s2X, s2Y, s2Size, s2Size, 224, 176, 255);
+  drawSquare(s3X, s3Y, s3Size, s3Size, mouseX, mouseY, 255);
+
+  //make square 3 move
+  s3Y += s3Speed;
+  //reset square 3 when it touches the bottom
+  if (s3Y > height) {
+    s3Y = 0;
+  }
 }
-function drawRect(x,y,w,h,r,g,b) {
-    noStroke();
-    fill(r, g, b);
-    rect(x, y, w, h);
-}
-
-function mousePressed() {
-  
-    if (mouseIsPressed){
-        rect.x = random(0, 500);
-        rect.y = random(0, 500);
-    } else{
-        rect.x = rect.x;
-        rect.y = rect.y;
-
-    }
-    
+function drawSquare(x, y, w, h, r, g, b) {
+  //body
+  push();
+  noStroke();
+  fill(r, g, b);
+  rect(x, y, w, h);
+  pop();
 }
 
+//Update square 1 position when mouse is clicked
+function mouseClicked() {
+  s1X = random(0, width);
+  s1Y = random(0, height);
+}
+
+//Update square 2 position when key is pressed
+function keyPressed() {
+  if (key === " ") {
+    //spacebar
+    s2X = random(0, width);
+    s2Y = random(0, height);
+  }
+}
