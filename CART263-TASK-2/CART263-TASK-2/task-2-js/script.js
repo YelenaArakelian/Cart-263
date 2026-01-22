@@ -6,32 +6,94 @@ console.log("we are a go!")
 /*** ALL ANWSERS TO BE ADDED IN THE ALLOCATED SPACE */
 /*** START PART ONE ACCESS */ 
 /* 1: all paragraph elements */
-/***CODE */
+/***CODE */ console.log(document.querySelectorAll("p"));
 /***OUTPUT: 
+ * NodeList(9)
+0
+: 
+p#1
+1
+: 
+p#2.img-descript
+2
+: 
+p#3.img-descript
+3
+: 
+p#4.img-descript
+4
+: 
+p#5.img-descript
+5
+: 
+p#6.img-descript
+6
+: 
+p#7.img-descript
+7
+: 
+p#8.img-descript
+8
+: 
+p#9.img-descript
+length
+: 
+9
  * 
  */
 
 
 /*************************************** */
 /* 2: only the first paragraph element */
-/***CODE */
+/***CODE */ console.log(document.querySelector("p"));
 /***OUTPUT: 
+ * 
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias perspiciatis blanditiis, et
+                laborum praesentium earum. Enim facere, quia commodi voluptate, quis asperiores, pariatur ducimus
+                officiis non
+                quasi officia sit veniam!
+            
  * 
  */
 
 
 /*************************************** */
 /* 3: all elements with the class inner-container */
-/***CODE */
+/***CODE */ console.log(document.querySelectorAll(".inner-container"));
 /***OUTPUT: 
+ * 0
+: 
+div.inner-container
+1
+: 
+div.inner-container
+2
+: 
+div.inner-container
+3
+: 
+div.inner-container
+4
+: 
+div.inner-container
+5
+: 
+div.inner-container
+6
+: 
+div.inner-container
+7
+: 
+div.inner-container
  * 
  */
 
 
 /*************************************** */
 /* 4: the last image element inside the element that has the class img-container */
-/***CODE */
+/***CODE */ console.log(document.querySelector(".img-container img:last-of-type"));
 /***OUTPUT: 
+ * <img class="img-image" src="task-2-images/sixteen.png">
  * 
  */
 
@@ -40,16 +102,34 @@ console.log("we are a go!")
 /* 5A: all h2 elements */
 /* 5B: length of the list in 5A */
 /* 5C: the text content of the first element in the list from 5A */
-/***CODE */
+/***CODE */ let h2Elements = document.querySelectorAll("h2");
+    console.log(h2Elements);
+    console.log(h2Elements.length);
+    console.log(h2Elements[0].textContent);
+    console.l
 /***OUTPUT: 
- * 
+ * 5A: length: 1
+ * 5B: 1
+ * 5C:  The header of this fancy page
  */
 
 
 /*************************************** */
 /* 6: the element with id name parent */
-/***CODE */
+/***CODE */ console.log(document.getElementById("parent"));
 /***OUTPUT: 
+ * script.js:5 we are a go!
+script.js:9 NodeList(9) [p#1, p#2.img-descript, p#3.img-descript, p#4.img-descript, p#5.img-descript, p#6.img-descript, p#7.img-descript, p#8.img-descript, p#9.img-descript]
+script.js:48 <p id=​"1">​…​</p>​
+script.js:62 NodeList(8) [div.inner-container, div.inner-container, div.inner-container, div.inner-container, div.inner-container, div.inner-container, div.inner-container, div.inner-container]
+script.js:94 <img class=​"img-image" src=​"task-2-images/​sixteen.png">​
+script.js:106 NodeList [h2]
+script.js:107 1
+script.js:108  The header of this fancy page
+script.js:119 <section id=​"parent">​flex<div class=​"inner-container">​…​</div>​<div class=​"inner-container">​…​</div>​<div class=​"inner-container">​…​</div>​<div class=​"inner-container">​…​</div>​<div class=​"inner-container">​…​</div>​<div class=​"inner-container">​…​</div>​<div class=​"inner-container">​…​</div>​<div class=​"inner-container">​…​</div>​</section>​
+Warning: Don’t paste code into the DevTools Console that you don’t understand or haven’t reviewed yourself. This could allow attackers to steal your identity or take control of your computer. Please type ‘allow pasting’ below and press Enter to allow pasting.
+Warning: Don’t paste code into the DevTools Console that you don’t understand or haven’t reviewed yourself. This could allow attackers to steal your identity or take control of your computer. Please type ‘allow pasting’ below and press Enter to allow pasting.
+
  * 
  */
 
