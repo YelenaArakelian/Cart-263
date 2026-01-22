@@ -141,30 +141,33 @@ Warning: Don’t paste code into the DevTools Console that you don’t understan
 /*** START PART TWO MODIFY */ 
 /*************************************** */
 /* 1: Select the first paragraph and replace the text within the paragraph... */
-/***CODE */
+/***CODE */ document.querySelector("p").textContent = "New text in paragraph one: text changed by Yelena Arakelian on the following date: 1/22/2026";
+
 /*************************************** */
 /* 2: Select all elements in the HTML that have the class name content-container
  and change the background color ... of first and second ...*/
-/***CODE */
+/***CODE */ document.querySelectorAll(".content-container")[0].style.backgroundColor = "orange";
+            document.querySelectorAll(".content-container")[1].style.backgroundColor = "purple";
 
 /*************************************** */
 /* 3: Change the src element of the first image element on the page to be ...
-/***CODE */
+/***CODE */ document.querySelector("img").src = "task-2-images/seven.png";
 
 /*************************************** */
 /* 4: Select the third paragraph element on the page and 
 replace the content (within the paragraph) to be an h2 element which contains the text `TEST 123`
-/***CODE */
+/***CODE */ document.querySelectorAll("p")[2].innerHTML = "<h2>TEST 123</h2>";
 
 /*************************************** */
 /* 5: Select the fourth paragraph element on the page and 
 add to the existing content an h2 element containing the text `TEST 123`
-/***CODE */
+/***CODE */ document.querySelectorAll("p")[3].innerHTML += "<h2>TEST 123</h2>";
 
 /*************************************** */
 /* 6: Select the fifth paragraph element on the page and add to the existing content 
 an img element that holds `one.png`, and add the class newStyle to said paragraph element.
-/***CODE */
+/***CODE */ document.querySelectorAll("p")[4].innerHTML += '<img src="task-2-images/one.png">';
+            document.querySelectorAll("p")[4].classList.add("newStyle");
 
 
 /*************************************** */
@@ -174,7 +177,14 @@ Next, iterate over the colors array, and for each color:
 assign the element from innerContainers variable with the same index 
 (i.e. colors[0] should be allocated to the first innerContainers element, colors[1] to the second, etc ...) 
 a background using that color.
-/***CODE */
+/***CODE */ document.querySelectorAll(".inner-container");
+            let colors = ['red','blue','green','orange'];
+            let innerContainers = document.querySelectorAll(".inner-container");
+            for(let i = 0; i < colors.length; i++){
+                innerContainers[i].style.backgroundColor = colors[i];
+
+                }
+            
 
 /*************************************** */
 /*** END PART TWO MODIFY */ 
