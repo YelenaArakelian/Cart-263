@@ -275,14 +275,51 @@ function customCreateElement(parent){
 
 /***CODE */
 
+// 2A + 2B + 2C + 2D:
+function customNewBoxCreate(parent){
+    // 2B: create new div element with class testDiv
+    let newDiv = document.createElement("div");
+    newDiv.classList.add("testDiv");
+    
+    // 2C: append new element to the parent variable
+    parent.appendChild(newDiv); 
 
+    // 2D: return this new element
+    return newDiv;
+}
 
+// 2E + 2F + 2G + 2H:
+let gridParent = document.getElementById("new-grid");
+let rows = 10;
+let cols = 10;
+let boxSize = 50; // size of each box
 
+for (let row = 0; row < rows; row++){
+    for (let col = 0; col < cols; col++){
+        let returnedDiv = customNewBoxCreate(gridParent);
 
+        returnedDiv.style.position = "absolute";
+        returnedDiv.style.width = boxSize + "px";
+        returnedDiv.style.height = boxSize + "px";
+        returnedDiv.style.left = (col * boxSize) + "px";
+        returnedDiv.style.top = (row * boxSize) + "px";
 
+        if (row % 2 == 0) { // checks if row is even
+            returnedDiv.style.backgroundColor = "white";
+            returnedDiv.textContent = "EVEN";
+        } else {
+            returnedDiv.style.backgroundColor = "purple";
+            returnedDiv.style.color = "white";
+            returnedDiv.textContent = "ODD";
+        }
+    }
+}
 
 /***EXPLANATION::
-    *
+    * A nested for loop was created to generate a 10x10 grid of div elements. Each div is styled to have a specific size and position based on its row and column position. An if stament was used ti change the background color and text to EVEN or ODD based on wether the row number is even or odd.
+    * 
+    * 
+    * 
  */
 
 
