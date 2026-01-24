@@ -106,7 +106,7 @@ div.inner-container
     console.log(h2Elements);
     console.log(h2Elements.length);
     console.log(h2Elements[0].textContent);
-    console.l
+    console.log(h2Elements.item(0).textContent);
 /***OUTPUT: 
  * 5A: length: 1
  * 5B: 1
@@ -137,57 +137,63 @@ Warning: Don’t paste code into the DevTools Console that you don’t understan
 /*** END PART ONE ACCESS */ 
 
 
-/*************************************** */
-/*** START PART TWO MODIFY */ 
-/*************************************** */
-/* 1: Select the first paragraph and replace the text within the paragraph... */
-/***CODE */ document.querySelector("p").textContent = "New text in paragraph one: text changed by Yelena Arakelian on the following date: 1/22/2026";
+// /*************************************** */
+// /*** START PART TWO MODIFY */ 
+// /*************************************** */
+// /* 1: Select the first paragraph and replace the text within the paragraph... */
+// /***CODE */ document.querySelector("p").textContent = "New text in paragraph one: text changed by Yelena Arakelian on the following date: 1/22/2026";
 
-/*************************************** */
-/* 2: Select all elements in the HTML that have the class name content-container
- and change the background color ... of first and second ...*/
-/***CODE */ document.querySelectorAll(".content-container")[0].style.backgroundColor = "orange";
-            document.querySelectorAll(".content-container")[1].style.backgroundColor = "purple";
+// /*************************************** */
+// /* 2: Select all elements in the HTML that have the class name content-container
+//  and change the background color ... of first and second ...*/
+// /***CODE */ document.querySelectorAll(".content-container")[0].style.backgroundColor = "orange";
+//             document.querySelectorAll(".content-container")[1].style.backgroundColor = "purple";
 
-/*************************************** */
-/* 3: Change the src element of the first image element on the page to be ...
-/***CODE */ document.querySelector("img").src = "task-2-images/seven.png";
+// /*************************************** */
+// /* 3: Change the src element of the first image element on the page to be ...
+// /***CODE */ document.querySelector("img").src = "task-2-images/seven.png";
 
-/*************************************** */
-/* 4: Select the third paragraph element on the page and 
-replace the content (within the paragraph) to be an h2 element which contains the text `TEST 123`
-/***CODE */ document.querySelectorAll("p")[2].innerHTML = "<h2>TEST 123</h2>";
+// /*************************************** */
+// /* 4: Select the third paragraph element on the page and 
+// replace the content (within the paragraph) to be an h2 element which contains the text `TEST 123`
+// /***CODE */ document.querySelectorAll("p")[2].innerHTML = "<h2>TEST 123</h2>";
 
-/*************************************** */
-/* 5: Select the fourth paragraph element on the page and 
-add to the existing content an h2 element containing the text `TEST 123`
-/***CODE */ document.querySelectorAll("p")[3].innerHTML += "<h2>TEST 123</h2>";
+// /*************************************** */
+// /* 5: Select the fourth paragraph element on the page and 
+// add to the existing content an h2 element containing the text `TEST 123`
+// /***CODE */ document.querySelectorAll("p")[3].innerHTML += "<h2>TEST 123</h2>";
 
-/*************************************** */
-/* 6: Select the fifth paragraph element on the page and add to the existing content 
-an img element that holds `one.png`, and add the class newStyle to said paragraph element.
-/***CODE */ document.querySelectorAll("p")[4].innerHTML += '<img src="task-2-images/one.png">';
-            document.querySelectorAll("p")[4].classList.add("newStyle");
+// /*************************************** */
+// /* 6: Select the fifth paragraph element on the page and add to the existing content 
+// an img element that holds `one.png`, and add the class newStyle to said paragraph element.
+// /***CODE */ document.querySelectorAll("p")[4].innerHTML += '<img src="task-2-images/one.png">';
+//             document.querySelectorAll("p")[4].classList.add("newStyle");
 
 
-/*************************************** */
-/* 7: Add the following array variable: let colors = ['red','blue','green','orange'];, 
-then access all elements with class name inner-container and save to a variable called `innerContainers`. 
-Next, iterate over the colors array, and for each color: 
-assign the element from innerContainers variable with the same index 
-(i.e. colors[0] should be allocated to the first innerContainers element, colors[1] to the second, etc ...) 
-a background using that color.
-/***CODE */ document.querySelectorAll(".inner-container");
-            let colors = ['red','blue','green','orange'];
-            let innerContainers = document.querySelectorAll(".inner-container");
-            for(let i = 0; i < colors.length; i++){
-                innerContainers[i].style.backgroundColor = colors[i];
+// /*************************************** */
+// /* 7: Add the following array variable: let colors = ['red','blue','green','orange'];, 
+// then access all elements with class name inner-container and save to a variable called `innerContainers`. 
+// Next, iterate over the colors array, and for each color: 
+// assign the element from innerContainers variable with the same index 
+// (i.e. colors[0] should be allocated to the first innerContainers element, colors[1] to the second, etc ...) 
+// a background using that color.
+// /***CODE */ document.querySelectorAll(".inner-container");
+//             let colors = ['red','blue','green','orange'];
+//             let innerContainers = document.querySelectorAll(".inner-container");
+//             for(let i = 0; i < colors.length; i++){
+//                 innerContainers[i].style.backgroundColor = colors[i];
 
-                }
+//                 }
             
 
-/*************************************** */
-/*** END PART TWO MODIFY */ 
+// /*************************************** */
+// /*** END PART TWO MODIFY */ 
+
+
+
+
+
+
 
 
 /*************************************** */
@@ -205,14 +211,50 @@ a background using that color.
 passing the current allPTagsThree element as the parent with each iteration.*/
 /***CODE */
 
+// 1A: 
+let allPTagsThree = document.querySelectorAll("p");
+
+// to see the variables
+console.log(allPTagsThree) 
+
+// 1B + 1C + 1D + 1E + 1F + 1G:
+function customCreateElement(parent){
+    // 1C: creates a new paragraph element
+    let newParagraph =  document.createElement("p");
+
+    // 1D: sets the text of this element
+    newParagraph.textContent = "using create Element";
+
+    // 1E: sets backgeound to green
+    newParagraph.style.backgroundColor = "green";
+
+    // 1F: sets text color to white
+    newParagraph.style.color = "white";
+
+    // 1G: appends new element to the parent variable
+    parent.appendChild(newParagraph);
+
+}
+
+    // 1H: loop through all p tags and call customCreateElement
+   for (let i = 0; i < allPTagsThree.length; i++){
+    customCreateElement(allPTagsThree[i]);
+}
+
 
 /***EXPLANATION::
- * 
- * 
- */
+ *  A loop was created to go through all paragraph elements on the page. The same function
+ * is reused to create a new p tag with specified styles and text content, and append it to each existing paragraph.
+ * Based on the remainder, the new paragraph is styled with a green background and white text. 
+ * Also, the text content is set to "using create Element".
+ */ 
+
+
+
+
 
 /*************************************** */
-/* 2: GRID OF BOXES */
+/* 2: GRID OF BOXES */ 
 /* 2A: Create another new function: function customNewBoxCreate(parent){ //body }*/
 /* 2B: In the body of customNewBoxCreate create a new div element, that has the class testDiv. 
 /* 2C:Then append this new element to the parent variable within the function. 
@@ -234,13 +276,22 @@ passing the current allPTagsThree element as the parent with each iteration.*/
 /***CODE */
 
 
+
+
+
+
+
 /***EXPLANATION::
- * 
- * 
+    *
  */
 
+
+
+
+
+
 /*************************************** */
-/* 3: GRID OF BOXES II */
+/* 3: GRID OF BOXES II */ /*Bonus..Won't do it */
 
 /* 3A: Create ANOTHER nested for loop - in order to generate a new grid ... 
     USE the same customNewBoxCreate function..., the only difference is that the parent element 
@@ -264,9 +315,8 @@ passing the current allPTagsThree element as the parent with each iteration.*/
 /*************************************** */
 /*** END PART THREE CREATE */ 
 /*************************************** */
-    
-
-
-
-
 }
+
+
+
+
