@@ -1,0 +1,25 @@
+body{
+  background:#333;
+  color:white;
+}
+
+.box{
+  padding:15px;
+  margin:10px;
+}
+
+#draggable-box-a{
+  background:cornflowerblue;
+}
+#draggable-box-b{
+  background:pink;
+}
+
+#dropTarget{
+  width:90%;
+  height:200px;
+  background:#ddd;
+  position:fixed;
+  bottom:100px;
+  left:5%;
+}

@@ -1,0 +1,42 @@
+*{
+  margin:0;
+  padding:0;
+}
+
+body{
+  background:rgb(49,49,49);
+  color:white;
+  font-family: sans-serif;
+}
+
+#parent{
+  background:rgba(24,24,24);
+  width:98vw;
+  margin:0 auto;
+  min-height:500px;
+  position:relative;
+}
+
+.box{
+  margin:10px;
+  width:max-content;          /* ✅ THIS FIXES THE LONG BAR */
+  min-height:40px;
+  padding:15px;
+  background:rgb(112,184,226);
+  position:absolute;         /* ✅ REQUIRED for left movement */
+  border:2px solid yellow;
+}
+
+#boxB{
+  top:80px;                  /* so it’s not on top of boxA */
+}
+
+#textContainer{
+  margin:20px auto;
+  width:45vw;
+  background:black;
+  min-height:200px;
+  border:2px solid rgb(0,183,255);
+  border-radius:5px;
+  padding:12px;
+}

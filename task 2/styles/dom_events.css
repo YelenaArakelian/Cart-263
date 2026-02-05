@@ -1,0 +1,78 @@
+*{
+  margin:0;
+  padding:0;
+}
+
+body{
+  background:rgb(49,49,49);
+  color:white;
+}
+
+#parent{
+  background:rgba(255,255,255,.25);
+  width:98vw;
+  margin:0 auto;
+  padding-bottom:10px;
+}
+
+.intro-section{
+  background: rgba(214,110,239,1);
+  padding:10px;
+  margin:10px;
+}
+.intro-section-active{
+  background: rgba(214,110,239,.5);
+}
+.intro-section-p-active{
+  background: rgba(214,110,239,.75);
+}
+
+.s1-section{
+  background: rgba(239,166,110,1);
+  padding:10px;
+  margin:10px;
+}
+.s1-section-active{
+  background: rgba(239,166,110,.5);
+}
+.s1-section-p-active{
+  background: rgba(239,166,110,.75);
+}
+
+.s2-section{
+  background: rgba(110,170,239,1);
+  padding:10px;
+  margin:10px;
+}
+.s2-section-active{
+  background: rgba(110,170,239,.5);
+}
+.s2-section-p-active{
+  background: rgba(110,170,239,.75);
+}
+
+.s3-section{
+  background: rgba(239,110,129,1);
+  padding:10px;
+  margin:10px;
+}
+.s3-section-active{
+  background: rgba(239,110,129,.5);
+}
+.s3-section-p-active{
+  background: rgba(239,110,129,.75);
+}
+
+#bubbleButton{
+  background:gray;
+  padding:5px;
+  width:max-content;
+  margin:10px;
+}
+
+.bubble{
+  width:15px;
+  height:15px;
+  border-radius:50%;
+  position:absolute;
+}
