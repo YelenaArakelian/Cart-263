@@ -102,6 +102,38 @@ body{
     background:rgba(246, 15, 142,1.0);
   }
 
+.TEAM_A_ANI_B_container {
+  display: grid;
+  grid-template-columns: repeat(5, 55px);
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+  padding-right: 15px;
+}
+
+.TEAM_A_ANI_B_circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #bde0fe;
+  transition: all 1s ease; 
+}
+
+.TEAM_A_c-word {
+  font-size: 20px;
+  color: rgb(35, 14, 121);
+  /* position:absolute; */
+
+  background-color: rgb(189, 240, 255);
+  display: inline-block;
+  margin: 2px;
+  padding: 2px;
+  border-style: dotted;
+  border-color: rgb(52, 84, 181);
+  border-width: 4px;
+}
+
+
 /*CSS TEAM H**/
 
 .TEAM_H_box{

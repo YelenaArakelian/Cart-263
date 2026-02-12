@@ -51,8 +51,8 @@ function setup_H() {
           circle.classList.add("TEAM_H_circle");
           circle.style.width = `20px`;
           circle.style.height = `20px`;
-          circle.style.left = offset + i * 25 + "px";
-          circle.style.top = offset + j * 25 + "px";
+          circle.style.left = offset + i * 15 + "px";
+          circle.style.top = offset + j * 15 + "px";
           parentCanvas.appendChild(circle);
           circles.push(circle);
         }
