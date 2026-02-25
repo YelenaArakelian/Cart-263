@@ -1,0 +1,13 @@
+window.onload = setup
+
+function setup() {
+document.getElementById("two").style.background = "red"
+newDivTwo.classList.add("square_shape");
+newDivTwo.innerHTML = " NEW ELEMENT TWO ";
+newDivTwo.style.backgroundColor = "yellow";
+newDivTwo.querySelector("p").style.color = "black"
+
+let sibling = document.querySelector("#three")
+let parentElementAgain = document.querySelector(".wrapper_flex_box")
+parentElementAgain.insertBefore(newDivTwo,sibling);
+}  

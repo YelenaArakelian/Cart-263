@@ -1,38 +1,57 @@
+/**
+ * TASK 1: Yéléna and Scarlett
+ */
+
 "use strict";
 
-// TEXT SETTINGS
-const word = "test";
-const textSizeValue = 28;
-const textColor = 255;
-const spacing = 20;
+let shapeSize = 50; 
+let isCircle = true;
+let r, g, b;
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(600, 600);
+  
+  // random color
+  r = random(255);
+  g = random(255);
+  b = random(255);
+  
+  rectMode(CENTER);
+  noStroke();
+}
+
+function draw() {
   background(0);
+  fill(r, g, b);
 
-  fill(textColor);
-  textSize(textSizeValue);
-  textAlign(CENTER, CENTER);
-
-  // CENTER TEXT
-  let centerX = width / 2;
-  let centerY = height / 2;
-
-  text(word, centerX, centerY);
-
-  // LOOP 1: 0 to 9
-  for (let i = 0; i < 10; i++) {
-    let x = i * spacing;
-    let y = centerY + 50;
-
-    text(i, x, y);
+  // Draws grid of shapes
+  for (let x = 0; x <= width; x += shapeSize * 1.5) {
+    for (let y = 0; y <= height; y += shapeSize * 1.5) {
+      
+      if (isCircle) {
+        circle(x, y, shapeSize);
+      } else {
+        rect(x, y, shapeSize, shapeSize);
+      }
+      
+    }
   }
+}
 
-  // LOOP 2: 15 down to 1
-  for (let i = 15; i > 0; i--) {
-    let x = centerX + 100;
-    let y = i * spacing;
+// Spacebar changes color
+function keyPressed() {
+  if (key === ' ') {
+    r = random(255);
+    g = random(255);
+    b = random(255);
+  }
+}
 
-    text(i, x, y);
+// Mouse click toggles shape
+function mousePressed() {
+  if (isCircle === true) {
+    isCircle = false;
+  } else {
+    isCircle = true;
   }
 }
